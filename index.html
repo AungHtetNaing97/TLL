@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    <style>
+        body {
+            background-color: azure;
+        }
+
+        div.container {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        div.input-group {
+            margin-bottom: 10px;
+        }
+
+        label[for=source] {
+            display: block;
+            background-color: antiquewhite;
+            width: 150px;
+            margin: auto;
+            margin-bottom: 5px;
+            border-radius: 20%;
+        }
+
+        .output {
+            background-color: aqua;
+            padding: 5px;
+            width: 150px;
+            margin: auto;
+            border: 2px solid white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px grey;
+            margin-bottom: 10px;
+        }
+
+        input[type=submit] {
+            width: 150px;
+            margin: auto;
+            font-size: 1.5rem;
+            background-color: darkblue;
+            color: yellow;
+            text-shadow: 2px 2px 2px red, 0px 0px 4px grey;
+            border-radius: 30px;
+            box-shadow: 3px 3px 5px grey;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>How to use?</h3>
+        <p>Go to the notes section in the course. scroll down to bottom and click "see more notes".</p>
+        <p>After that, right click on the page and select "view page source".</p>
+        <p>Select all the text and copy paste to source textarea.</p>
+        <p>Add your desired output file name. </p>
+        <form method="post" action="/get_form">
+            <div class="mb-3 input-group">
+                <label for="source">Source</label>
+                <textarea id="source"></textarea>
+            </div>
+
+            <div class="output">
+                <label for="output_name" class="input-group-text">Output Name</label>
+                <input name="output_name" id="output_name" type="text" placeholder="eg: my_file.txt" size="10">
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>

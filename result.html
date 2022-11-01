@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ file_name }}</title>
+    <style>
+        div {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            background-color: tomato;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Your file is ready</h1>
+        
+        <p><b>Error:</b> {{ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.&nbsp;}}</p>
+        <b>% else %</b>
+        <a href="{{ url_for('file',file_name = file_name) }}" target="_blank" Download>Download</a>
+        <b>{% endif %}</b>
+    </div>
+
+</body>
+
+</html>
